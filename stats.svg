@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="290" viewBox="0 0 1200 290" role="img" aria-label="GitHub activity: 11 public projects, 41 public commits in 2026">
+  <defs>
+    <pattern id="d" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#9AA8FF" fill-opacity=".18"/></pattern>
+    <style>
+      .t { font-family: "Segoe UI", -apple-system, "Helvetica Neue", Arial, sans-serif; }
+      .m { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace; }
+      .n { opacity: 0; animation: up .7s cubic-bezier(.2,.8,.2,1) forwards; }
+      @keyframes up { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+      @media (prefers-reduced-motion: reduce) { .n { animation: none; opacity: 1; } }
+    </style>
+  </defs>
+  <rect width="1200" height="290" rx="22" fill="#0B1630"/>
+  <rect width="1200" height="290" rx="22" fill="url(#d)"/>
+  <circle cx="74" cy="46" r="5" fill="#19C3A6"/>
+  <text x="90" y="51" class="m" font-size="14" fill="#19C3A6">github.activity</text>
+  <text x="1136" y="51" class="m" font-size="12" fill="#6E7FA6" text-anchor="end">updated 2026-11-17</text>
+  
+  <g class="n" style="animation-delay:0ms">
+    <text x="64" y="122" class="t" font-size="52" font-weight="800" fill="#FFFFFF" letter-spacing="-1.5">11</text>
+    <text x="64" y="150" class="t" font-size="16" fill="#A9B4CC">public projects</text>
+  </g>
+  <g class="n" style="animation-delay:120ms">
+    <text x="336" y="122" class="t" font-size="52" font-weight="800" fill="#FFFFFF" letter-spacing="-1.5">7</text>
+    <text x="336" y="150" class="t" font-size="16" fill="#A9B4CC">active in 2026</text>
+  </g>
+  <g class="n" style="animation-delay:240ms">
+    <text x="608" y="122" class="t" font-size="52" font-weight="800" fill="#FFFFFF" letter-spacing="-1.5">41</text>
+    <text x="608" y="150" class="t" font-size="16" fill="#A9B4CC">public commits in 2026</text>
+  </g>
+  <g class="n" style="animation-delay:360ms">
+    <text x="880" y="122" class="t" font-size="52" font-weight="800" fill="#FFFFFF" letter-spacing="-1.5">1</text>
+    <text x="880" y="150" class="t" font-size="16" fill="#A9B4CC">stars earned</text>
+  </g>
+  <text x="64" y="184" class="m" font-size="12" fill="#6E7FA6">languages across public repos</text>
+  <rect x="64.0" y="196" width="372.8" height="12" rx="6" fill="#19C3A6"/><rect x="439.8" y="196" width="263.8" height="12" rx="6" fill="#FFB547"/><rect x="706.6" y="196" width="219.8" height="12" rx="6" fill="#9AA8FF"/><rect x="929.4" y="196" width="189.1" height="12" rx="6" fill="#F2789F"/><rect x="1121.5" y="196" width="11.5" height="12" rx="6" fill="#5E74B8"/>
+  <circle cx="69" cy="236" r="5" fill="#19C3A6"/><text x="80" y="241" class="t" font-size="14" fill="#C9D2E6">Java 35%</text><circle cx="168.6" cy="236" r="5" fill="#FFB547"/><text x="179.6" y="241" class="t" font-size="14" fill="#C9D2E6">JavaScript 25%</text><circle cx="317.4" cy="236" r="5" fill="#9AA8FF"/><text x="328.4" y="241" class="t" font-size="14" fill="#C9D2E6">Dart 21%</text><circle cx="417" cy="236" r="5" fill="#F2789F"/><text x="428" y="241" class="t" font-size="14" fill="#C9D2E6">TypeScript 18%</text><circle cx="565.8" cy="236" r="5" fill="#5E74B8"/><text x="576.8" y="241" class="t" font-size="14" fill="#C9D2E6">CSS 1%</text>
+</svg>
