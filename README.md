@@ -4,8 +4,8 @@
 
 <p align="center">
   <a href="https://quyenchau.pages.dev"><img src="https://img.shields.io/badge/My_CV-19C3A6?style=for-the-badge&logoColor=white" alt="My CV"></a>
-  <a href="https://www.linkedin.com/in/quy%E1%BB%81n-ch%C3%A2u-7b1331246/"><img src="https://img.shields.io/badge/LinkedIn-Connect-FFB547?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=0B1630" alt="LinkedIn"></a>
-  <a href="mailto:ctuanquyen97@gmail.com"><img src="https://img.shields.io/badge/Email-ctuanquyen97@gmail.com-9AA8FF?style=for-the-badge&logo=gmail&logoColor=white&labelColor=0B1630" alt="Email"></a>
+  <a href="https://www.linkedin.com/in/quy%E1%BB%81n-ch%C3%A2u-7b1331246/"><img src="https://img.shields.io/badge/LinkedIn-0B1630?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
+  <a href="mailto:ctuanquyen97@gmail.com"><img src="https://img.shields.io/badge/Contact_me-0B1630?style=for-the-badge&logo=gmail&logoColor=white" alt="Contact me"></a>
 </p>
 
 ## 👋 About me
