@@ -10,7 +10,7 @@
 
 ## 👋 About me
 
-Full-stack developer in **Ho Chi Minh City** with **7+ years** across Java and Kotlin backends, native and Flutter mobile, and NestJS microservices. I've shipped POS hardware integrations, PCI-scoped payment services, real-time tracking and event-driven pipelines for clients in the **USA, Australia and Vietnam**.
+Full-stack developer in **Ho Chi Minh City** with **7+ years** across Java and Kotlin backends, native and Flutter mobile, and NestJS microservices. I've shipped POS hardware integrations, PCI-scoped payment services, real-time tracking and event-driven pipelines.
 
 I like owning a codebase end to end: architecture, releases, crash triage and code review.
 

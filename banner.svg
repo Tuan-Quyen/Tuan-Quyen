@@ -36,7 +36,7 @@
       <text x="400" y="208" class="w w3">messages.</text>
       <text x="400" y="208" class="w w4">events.</text>
     </g>
-    <text x="64" y="262" class="f" font-size="18" fill="#A9B4CC">Java · Kotlin · Swift · Flutter · NestJS  —  7+ years, clients in the USA, Australia and Vietnam</text>
+    <text x="64" y="262" class="f" font-size="18" fill="#A9B4CC">Java · Kotlin · Swift · Flutter · NestJS  —  7+ years building backend and mobile</text>
 
     <!-- terminal -->
     <rect x="846" y="44" width="280" height="300" rx="28" fill="url(#dev)"/>
