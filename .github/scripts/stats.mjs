@@ -62,6 +62,8 @@ const sum = k => Object.values(perYear).reduce((a, v) => a + v[k], 0);
 const owned = (await rest(`/users/${USER}/repos?per_page=100&type=owner`)).filter(r => !r.fork && !r.private);
 let starsTotal = owned.reduce((a, r) => a + r.stargazers_count, 0), starsYear = 0;
 for (const r of owned.filter(r => r.stargazers_count > 0)) {
+  // repos created this year: every star was earned this year, no lookup needed
+  if (new Date(r.created_at).getUTCFullYear() === YEAR) { starsYear += r.stargazers_count; continue; }
   // The Actions token cannot read stargazers of other repos, so star dates are fetched anonymously (public data).
   try {
     const res = await fetch(`https://api.github.com/repos/${USER}/${r.name}/stargazers?per_page=100`,
@@ -73,6 +75,12 @@ for (const r of owned.filter(r => r.stargazers_count > 0)) {
     starsYear = null;
     break;
   }
+}
+
+// If star dates could not be read this run (anonymous rate limit), keep the last known value.
+if (starsYear == null && existsSync(README)) {
+  const m = readFileSync(README, "utf8").match(new RegExp(`\\| ${YEAR} \\| ([0-9,]+) \\|`));
+  if (m) starsYear = Number(m[1].replace(/,/g, ""));
 }
 
 const total = { stars: starsTotal, commits: sum("commits"), prs: sum("prs"), issues: sum("issues"), contributed: allRepos.size };
