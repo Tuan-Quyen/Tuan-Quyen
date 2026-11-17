@@ -63,8 +63,8 @@ const owned = (await rest(`/users/${USER}/repos?per_page=100&type=owner`)).filte
 let starsTotal = 0, starsYear = 0;
 for (const r of owned.filter(r => r.stargazers_count > 0)) {
   starsTotal += r.stargazers_count;
-  const gazers = await rest(`/repos/${USER}/${r.name}/stargazers?per_page=100`, "application/vnd.github.star+json");
-  starsYear += gazers.filter(g => new Date(g.starred_at).getUTCFullYear() === YEAR).length;
+  const d = await gql(`query($o:String!,$n:String!){ repository(owner:$o,name:$n){ stargazers(first:100){ edges { starredAt } } } }`, { o: USER, n: r.name });
+  starsYear += d.repository.stargazers.edges.filter(e => new Date(e.starredAt).getUTCFullYear() === YEAR).length;
 }
 
 const total = { stars: starsTotal, commits: sum("commits"), prs: sum("prs"), issues: sum("issues"), contributed: allRepos.size };
