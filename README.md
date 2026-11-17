@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://quyenchau.pages.dev"><img src="./banner.svg" alt="Quyen Chau · Full-Stack Engineer · I build software that moves money, maps, messages and events" width="100%"></a>
+  <a href="https://quyenchau.pages.dev"><img src="./banner.svg" alt="Quyen Chau · Full-Stack Engineer · I build payment, real-time and mobile systems" width="100%"></a>
 </p>
 
 <p align="center">
@@ -73,7 +73,7 @@ Also: Quarkus · Ktor · gRPC · MQTT · BullMQ · Socket.IO · TimescaleDB · H
 <!-- STATS:START (generated daily by .github/scripts/stats.mjs, do not edit) -->
 | Public repositories | Public commits in 2026 | On GitHub since | Top languages (public repos) |
 |---|---|---|---|
-| 10 | 38 | 2019 | Java 35%, JavaScript 25%, Dart 21%, TypeScript 18%, CSS 1% |
+| 11 | 39 | 2019 | Java 32%, JavaScript 27%, TypeScript 21%, Dart 19%, CSS 1% |
 
 <sub>Updated 2026-11-17. Most of my professional work lives in private client repositories and is not counted here.</sub>
 <!-- STATS:END -->

@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320" role="img" aria-label="Quyen Chau, Full-Stack Engineer. I build software that moves money, maps, messages and events.">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320" role="img" aria-label="Quyen Chau, Full-Stack Engineer. I build payment, real-time and mobile systems.">
   <defs>
     <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#9AA8FF" fill-opacity=".22"/></pattern>
     <radialGradient id="glow" cx="78%" cy="45%" r="45%"><stop offset="0" stop-color="#19C3A6" stop-opacity=".30"/><stop offset="1" stop-color="#19C3A6" stop-opacity="0"/></radialGradient>
@@ -26,16 +26,10 @@
 
     <circle class="ping" cx="74" cy="54" r="5" fill="#19C3A6"/>
     <circle cx="74" cy="54" r="5" fill="#19C3A6"/>
-    <text x="90" y="59" class="m" font-size="15" fill="#19C3A6">Xin chào, I'm Quyen Chau · Full-Stack Engineer</text>
+    <text x="90" y="59" class="m" font-size="15" fill="#19C3A6">Hi, I'm Quyen Chau · Full-Stack Engineer</text>
 
-    <text x="64" y="138" class="f" font-size="62" font-weight="800" fill="#FFFFFF" letter-spacing="-2">I build software</text>
-    <text x="64" y="208" class="f" font-size="62" font-weight="800" fill="#FFFFFF" letter-spacing="-2">that moves</text>
-    <g class="f" font-size="62" font-weight="800" letter-spacing="-2" fill="url(#grad)">
-      <text x="400" y="208" class="w w1">money.</text>
-      <text x="400" y="208" class="w w2">maps.</text>
-      <text x="400" y="208" class="w w3">messages.</text>
-      <text x="400" y="208" class="w w4">events.</text>
-    </g>
+    <text x="64" y="136" class="f" font-size="52" font-weight="800" fill="#FFFFFF" letter-spacing="-1.6">I build payment, real-time</text>
+    <text x="64" y="196" class="f" font-size="52" font-weight="800" fill="#FFFFFF" letter-spacing="-1.6">and mobile systems.</text>
     <text x="64" y="262" class="f" font-size="18" fill="#A9B4CC">Java · Kotlin · Swift · Flutter · NestJS  —  7+ years building backend and mobile</text>
 
     <!-- terminal -->
