@@ -56,33 +56,33 @@ const tiles = [
   [fmt(yearCommits), `Public commits in ${year}`, COLORS[2]],
   [String(since), "On GitHub since", COLORS[3]],
 ];
-const CW = 1200, PAD = 48, GAP = 16;
+const CW = 1200, PAD = 48, GAP = 16, H = 308;
 const TW = (CW - PAD * 2 - GAP * 3) / 4;
 const tileSvg = tiles.map(([n, label, c], i) => {
   const tx = PAD + i * (TW + GAP);
   return `<g class="up" style="animation-delay:${i * 110}ms">
-    <rect x="${tx}" y="92" width="${TW}" height="124" rx="16" fill="#13224A" stroke="#22366A"/>
-    <rect x="${tx + 22}" y="112" width="28" height="4" rx="2" fill="${c}"/>
-    <text x="${tx + 22}" y="172" class="n">${esc(n)}</text>
-    <text x="${tx + 22}" y="198" class="l">${esc(label)}</text>
+    <rect x="${tx}" y="40" width="${TW}" height="124" rx="16" fill="#13224A" stroke="#22366A"/>
+    <rect x="${tx + 22}" y="60" width="28" height="4" rx="2" fill="${c}"/>
+    <text x="${tx + 22}" y="120" class="n">${esc(n)}</text>
+    <text x="${tx + 22}" y="146" class="l">${esc(label)}</text>
   </g>`;
 }).join("");
 const BW = CW - PAD * 2;
 let bx = PAD;
 const bar = top.map((l, i) => {
   const w = Math.max(6, l.pct * BW);
-  const r = `<rect x="${bx.toFixed(1)}" y="262" width="${(w - 4).toFixed(1)}" height="10" rx="5" fill="${COLORS[i]}"/>`;
+  const r = `<rect x="${bx.toFixed(1)}" y="210" width="${(w - 4).toFixed(1)}" height="10" rx="5" fill="${COLORS[i]}"/>`;
   bx += w;
   return r;
 }).join("");
 let lx = PAD;
 const legend = top.map((l, i) => {
   const label = `${l.name}`;
-  const g = `<circle cx="${lx + 5}" cy="298" r="5" fill="${COLORS[i]}"/><text x="${lx + 17}" y="303" class="lg">${esc(label)} <tspan class="lp">${pct(l)}</tspan></text>`;
+  const g = `<circle cx="${lx + 5}" cy="246" r="5" fill="${COLORS[i]}"/><text x="${lx + 17}" y="251" class="lg">${esc(label)} <tspan class="lp">${pct(l)}</tspan></text>`;
   lx += 44 + (label.length + 4) * 8.4;
   return g;
 }).join("");
-const card = `<svg xmlns="http://www.w3.org/2000/svg" width="${CW}" height="360" viewBox="0 0 ${CW} 360" role="img" aria-label="GitHub activity: ${own.length} public repositories, ${totalCommits} public commits all time, ${yearCommits} in ${year}, on GitHub since ${since}. Top languages: ${top.map(l => `${l.name} ${pct(l)}`).join(", ")}.">
+const card = `<svg xmlns="http://www.w3.org/2000/svg" width="${CW}" height="${H}" viewBox="0 0 ${CW} ${H}" role="img" aria-label="GitHub activity: ${own.length} public repositories, ${totalCommits} public commits all time, ${yearCommits} in ${year}, on GitHub since ${since}. Top languages: ${top.map(l => `${l.name} ${pct(l)}`).join(", ")}.">
   <defs>
     <pattern id="d" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#9AA8FF" fill-opacity=".16"/></pattern>
     <radialGradient id="g" cx="90%" cy="0%" r="60%"><stop offset="0" stop-color="#19C3A6" stop-opacity=".18"/><stop offset="1" stop-color="#19C3A6" stop-opacity="0"/></radialGradient>
@@ -102,18 +102,15 @@ const card = `<svg xmlns="http://www.w3.org/2000/svg" width="${CW}" height="360"
       @media (prefers-reduced-motion: reduce) { .up { animation: none; opacity: 1; } .live { animation: none; opacity: 0; } }
     </style>
   </defs>
-  <rect width="${CW}" height="360" rx="22" fill="#0B1630"/>
-  <rect width="${CW}" height="360" rx="22" fill="url(#d)"/>
-  <rect width="${CW}" height="360" rx="22" fill="url(#g)"/>
-  <rect x="${PAD}" y="38" width="146" height="28" rx="14" fill="#13224A" stroke="#22366A"/>
-  <circle class="live" cx="${PAD + 20}" cy="52" r="5" fill="#19C3A6"/><circle cx="${PAD + 20}" cy="52" r="5" fill="#19C3A6"/>
-  <text x="${PAD + 34}" y="57" class="m" font-size="13" fill="#19C3A6">LIVE · hourly</text>
+  <rect width="${CW}" height="${H}" rx="22" fill="#0B1630"/>
+  <rect width="${CW}" height="${H}" rx="22" fill="url(#d)"/>
+  <rect width="${CW}" height="${H}" rx="22" fill="url(#g)"/>
   ${tileSvg}
-  <text x="${PAD}" y="248" class="s">Top languages across public repositories</text>
+  <text x="${PAD}" y="196" class="s">Top languages across public repositories</text>
   ${bar}
   ${legend}
-  <text x="${PAD}" y="338" class="m" font-size="12" fill="#6E7FA6">updated ${now} UTC+7 · last push ${lastPushVN}</text>
-  <text x="${CW - PAD}" y="57" class="m" font-size="12" fill="#6E7FA6" text-anchor="end">public repositories only</text>
+  <text x="${PAD}" y="${H - 22}" class="m" font-size="12" fill="#6E7FA6">updated ${now} UTC+7 · last push ${lastPushVN}</text>
+  <text x="${CW - PAD}" y="${H - 22}" class="m" font-size="12" fill="#6E7FA6" text-anchor="end">public repositories only</text>
 </svg>
 `;
 
