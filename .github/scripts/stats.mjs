@@ -39,8 +39,8 @@ const top = Object.entries(langBytes).sort((a, b) => b[1] - a[1]).slice(0, 5)
 const topSum = top.reduce((a, l) => a + l.pct, 0);
 top.forEach(l => (l.pct = l.pct / topSum));
 
-const stars = own.reduce((a, r) => a + r.stargazers_count, 0);
-const active = own.filter(r => new Date(r.pushed_at).getUTCFullYear() === year).length;
+const user = await get(`/users/${USER}`);
+const since = new Date(user.created_at).getUTCFullYear();
 
 const COLORS = ["#19C3A6", "#FFB547", "#9AA8FF", "#F2789F", "#5E74B8"];
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
@@ -48,9 +48,8 @@ const today = new Date().toISOString().slice(0, 10);
 
 const metrics = [
   [own.length, "public projects"],
-  [active, `active in ${year}`],
   [commitsThisYear, `public commits in ${year}`],
-  [stars, "stars earned"],
+  [`${year - since}+`, `years on GitHub, since ${since}`],
 ];
 
 let x = 64;
@@ -87,8 +86,8 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="290" v
   <text x="1136" y="51" class="m" font-size="12" fill="#6E7FA6" text-anchor="end">updated ${today}</text>
   ${metrics.map(([n, label], i) => `
   <g class="n" style="animation-delay:${i * 120}ms">
-    <text x="${64 + i * 272}" y="122" class="t" font-size="52" font-weight="800" fill="#FFFFFF" letter-spacing="-1.5">${n}</text>
-    <text x="${64 + i * 272}" y="150" class="t" font-size="16" fill="#A9B4CC">${esc(label)}</text>
+    <text x="${64 + i * 360}" y="122" class="t" font-size="52" font-weight="800" fill="#FFFFFF" letter-spacing="-1.5">${n}</text>
+    <text x="${64 + i * 360}" y="150" class="t" font-size="16" fill="#A9B4CC">${esc(label)}</text>
   </g>`).join("")}
   <text x="64" y="184" class="m" font-size="12" fill="#6E7FA6">languages across public repos</text>
   ${bar}
