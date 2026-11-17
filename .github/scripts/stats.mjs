@@ -60,11 +60,19 @@ const sum = k => Object.values(perYear).reduce((a, v) => a + v[k], 0);
 
 // ---------- stars (owned, non-fork public repos) ----------
 const owned = (await rest(`/users/${USER}/repos?per_page=100&type=owner`)).filter(r => !r.fork && !r.private);
-let starsTotal = 0, starsYear = 0;
+let starsTotal = owned.reduce((a, r) => a + r.stargazers_count, 0), starsYear = 0;
 for (const r of owned.filter(r => r.stargazers_count > 0)) {
-  starsTotal += r.stargazers_count;
-  const d = await gql(`query($o:String!,$n:String!){ repository(owner:$o,name:$n){ stargazers(first:100){ edges { starredAt } } } }`, { o: USER, n: r.name });
-  starsYear += d.repository.stargazers.edges.filter(e => new Date(e.starredAt).getUTCFullYear() === YEAR).length;
+  // The Actions token cannot read stargazers of other repos, so star dates are fetched anonymously (public data).
+  try {
+    const res = await fetch(`https://api.github.com/repos/${USER}/${r.name}/stargazers?per_page=100`,
+      { headers: { Accept: "application/vnd.github.star+json", "User-Agent": "profile-stats" } });
+    if (!res.ok) throw new Error(String(res.status));
+    starsYear += (await res.json()).filter(g => new Date(g.starred_at).getUTCFullYear() === YEAR).length;
+  } catch (e) {
+    console.warn(`star dates unavailable for ${r.name}: ${e.message}`);
+    starsYear = null;
+    break;
+  }
 }
 
 const total = { stars: starsTotal, commits: sum("commits"), prs: sum("prs"), issues: sum("issues"), contributed: allRepos.size };
@@ -85,7 +93,7 @@ const pct = l => `${Math.round(l.pct * 100)}%`;
 
 // ---------- SVG ----------
 const COLORS = ["#19C3A6", "#FFB547", "#9AA8FF", "#F2789F", "#5E74B8"];
-const fmt = n => n.toLocaleString("en-US");
+const fmt = n => (n == null ? "–" : n.toLocaleString("en-US"));
 const esc = t => String(t).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const ROWS = [
   ["stars", "Stars earned"],
@@ -101,7 +109,7 @@ const STEP = 0.09; // seconds per count-up frame
 
 // count-up: stacked text frames; each intermediate frame is visible only while its animation runs
 function counter(value, x, y, delay) {
-  const vals = [...new Set(FRAMES.map(f => Math.round(value * f)))];
+  const vals = value == null ? [null] : [...new Set(FRAMES.map(f => Math.round(value * f)))];
   return vals.map((v, i) => {
     const last = i === vals.length - 1;
     const d = (delay + i * STEP).toFixed(2);
