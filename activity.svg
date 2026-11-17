@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-label="GitHub activity: 11 public repositories, 73 public commits all time, 40 in 2026, on GitHub since 2019. Top languages: Java 32%, JavaScript 27%, TypeScript 21%, Dart 19%, CSS 1%.">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-label="GitHub activity: 11 public repositories, 74 public commits all time, 41 in 2026, on GitHub since 2019. Top languages: Java 32%, JavaScript 27%, TypeScript 21%, Dart 19%, CSS 1%.">
   <defs>
     <pattern id="d" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#9AA8FF" fill-opacity=".16"/></pattern>
     <radialGradient id="g" cx="90%" cy="0%" r="60%"><stop offset="0" stop-color="#19C3A6" stop-opacity=".18"/><stop offset="1" stop-color="#19C3A6" stop-opacity="0"/></radialGradient>
@@ -12,7 +12,7 @@
       .lg { font-size: 14px; fill: #C9D2E6; }
       .lp { fill: #8D9AB8; }
       .up { opacity: 0; animation: up .6s cubic-bezier(.2,.8,.2,1) forwards; }
-      .live { animation: pulse 2s ease-out infinite; transform-origin: 1026px 52px; }
+      .live { animation: pulse 2s ease-out infinite; transform-origin: 68px 52px; }
       @keyframes up { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
       @keyframes pulse { 0% { opacity: .7; transform: scale(1); } 100% { opacity: 0; transform: scale(2.6); } }
       @media (prefers-reduced-motion: reduce) { .up { animation: none; opacity: 1; } .live { animation: none; opacity: 0; } }
@@ -21,10 +21,9 @@
   <rect width="1200" height="360" rx="22" fill="#0B1630"/>
   <rect width="1200" height="360" rx="22" fill="url(#d)"/>
   <rect width="1200" height="360" rx="22" fill="url(#g)"/>
-  <text x="48" y="60" class="h">GitHub activity</text>
-  <rect x="1006" y="38" width="146" height="28" rx="14" fill="#13224A" stroke="#22366A"/>
-  <circle class="live" cx="1026" cy="52" r="5" fill="#19C3A6"/><circle cx="1026" cy="52" r="5" fill="#19C3A6"/>
-  <text x="1040" y="57" class="m" font-size="13" fill="#19C3A6">LIVE · hourly</text>
+  <rect x="48" y="38" width="146" height="28" rx="14" fill="#13224A" stroke="#22366A"/>
+  <circle class="live" cx="68" cy="52" r="5" fill="#19C3A6"/><circle cx="68" cy="52" r="5" fill="#19C3A6"/>
+  <text x="82" y="57" class="m" font-size="13" fill="#19C3A6">LIVE · hourly</text>
   <g class="up" style="animation-delay:0ms">
     <rect x="48" y="92" width="264" height="124" rx="16" fill="#13224A" stroke="#22366A"/>
     <rect x="70" y="112" width="28" height="4" rx="2" fill="#19C3A6"/>
@@ -33,12 +32,12 @@
   </g><g class="up" style="animation-delay:110ms">
     <rect x="328" y="92" width="264" height="124" rx="16" fill="#13224A" stroke="#22366A"/>
     <rect x="350" y="112" width="28" height="4" rx="2" fill="#FFB547"/>
-    <text x="350" y="172" class="n">73</text>
+    <text x="350" y="172" class="n">74</text>
     <text x="350" y="198" class="l">Public commits, all time</text>
   </g><g class="up" style="animation-delay:220ms">
     <rect x="608" y="92" width="264" height="124" rx="16" fill="#13224A" stroke="#22366A"/>
     <rect x="630" y="112" width="28" height="4" rx="2" fill="#9AA8FF"/>
-    <text x="630" y="172" class="n">40</text>
+    <text x="630" y="172" class="n">41</text>
     <text x="630" y="198" class="l">Public commits in 2026</text>
   </g><g class="up" style="animation-delay:330ms">
     <rect x="888" y="92" width="264" height="124" rx="16" fill="#13224A" stroke="#22366A"/>
@@ -49,6 +48,6 @@
   <text x="48" y="248" class="s">Top languages across public repositories</text>
   <rect x="48.0" y="262" width="347.4" height="10" rx="5" fill="#19C3A6"/><rect x="399.4" y="262" width="292.1" height="10" rx="5" fill="#FFB547"/><rect x="695.5" y="262" width="230.5" height="10" rx="5" fill="#9AA8FF"/><rect x="930.0" y="262" width="204.4" height="10" rx="5" fill="#F2789F"/><rect x="1138.4" y="262" width="9.6" height="10" rx="5" fill="#5E74B8"/>
   <circle cx="53" cy="298" r="5" fill="#19C3A6"/><text x="65" y="303" class="lg">Java <tspan class="lp">32%</tspan></text><circle cx="164.2" cy="298" r="5" fill="#FFB547"/><text x="176.2" y="303" class="lg">JavaScript <tspan class="lp">27%</tspan></text><circle cx="325.8" cy="298" r="5" fill="#9AA8FF"/><text x="337.8" y="303" class="lg">TypeScript <tspan class="lp">21%</tspan></text><circle cx="487.40000000000003" cy="298" r="5" fill="#F2789F"/><text x="499.40000000000003" y="303" class="lg">Dart <tspan class="lp">19%</tspan></text><circle cx="598.6" cy="298" r="5" fill="#5E74B8"/><text x="610.6" y="303" class="lg">CSS <tspan class="lp">1%</tspan></text>
-  <text x="48" y="338" class="m" font-size="12" fill="#6E7FA6">updated 2026-11-18 01:21 UTC+7 · last push 2026-11-17</text>
-  <text x="1152" y="338" class="m" font-size="12" fill="#6E7FA6" text-anchor="end">public repositories only</text>
+  <text x="48" y="338" class="m" font-size="12" fill="#6E7FA6">updated 2026-11-18 01:23 UTC+7 · last push 2026-11-17</text>
+  <text x="1152" y="57" class="m" font-size="12" fill="#6E7FA6" text-anchor="end">public repositories only</text>
 </svg>
