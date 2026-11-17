@@ -10,7 +10,7 @@
 
 ## About
 
-Full-stack engineer in **Ho Chi Minh City** with **7+ years** across Java and Kotlin backends, native and Flutter mobile, and NestJS microservices. I've shipped POS hardware integrations, PCI-scoped payment services, real-time tracking and event-driven pipelines.
+Full-stack engineer in **Ho Chi Minh City** with **7+ years** across Java backends (Quarkus, Spring, Kafka, microservices), native Android and iOS plus Flutter mobile, and React web. I've shipped POS hardware integrations, PCI-scoped payment services, real-time tracking and event-driven pipelines.
 
 I like owning a codebase end to end: architecture, releases, crash triage and code review.
 
@@ -23,6 +23,16 @@ I like owning a codebase end to end: architecture, releases, crash triage and co
 <table>
   <tr>
     <td width="50%" valign="top">
+      <h3>Event-driven backends</h3>
+      Java Quarkus and Spring services on Kafka, VerneMQ/ActiveMQ, gRPC and MQTT for multi-tenant network platforms with thousands of devices. High-load time series on TimescaleDB.
+    </td>
+    <td width="50%" valign="top">
+      <h3>Mobile apps</h3>
+      Native Android (Kotlin/Java) and iOS (Swift/SwiftUI), Flutter with BLoC and Clean Architecture, React Native. Published to Google Play and the App Store, kept stable through Crashlytics.
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
       <h3>Payments and POS</h3>
       Android/iOS POS apps across PAX, Clover and BLE card readers. An embedded Ktor service that hands third-party POS software card <b>tokens</b> instead of raw card data. Stripe and VNPay with webhooks.
     </td>
@@ -31,38 +41,28 @@ I like owning a codebase end to end: architecture, releases, crash triage and co
       Live tour tracking and turn-by-turn navigation that recover from GPS and network loss. Horizontally scalable location service on Socket.IO with the Redis adapter.
     </td>
   </tr>
-  <tr>
-    <td width="50%" valign="top">
-      <h3>Event-driven backends</h3>
-      Java Spring and Quarkus services on Kafka, gRPC and MQTT for multi-tenant network platforms with thousands of devices. High-load time series on TimescaleDB.
-    </td>
-    <td width="50%" valign="top">
-      <h3>Mobile apps</h3>
-      Native Kotlin and Swift, Flutter with BLoC and Clean Architecture, React Native. Published to Google Play and the App Store, kept stable through Crashlytics.
-    </td>
-  </tr>
 </table>
 
 ## Tech stack
 
 <p>
   <b>Backend</b><br>
-  <img src="https://skillicons.dev/icons?i=java,kotlin,spring,nodejs,nestjs,kafka&theme=dark" alt="Java, Kotlin, Spring, Node.js, NestJS, Kafka">
-</p>
-<p>
-  <b>Mobile</b><br>
-  <img src="https://skillicons.dev/icons?i=androidstudio,swift,flutter,dart,react&theme=dark" alt="Android, Swift, Flutter, Dart, React Native">
-</p>
-<p>
-  <b>Web and data</b><br>
-  <img src="https://skillicons.dev/icons?i=ts,react,vue,mongodb,postgres,mysql,redis&theme=dark" alt="TypeScript, React, Vue, MongoDB, PostgreSQL, MySQL, Redis">
-</p>
-<p>
-  <b>DevOps</b><br>
-  <img src="https://skillicons.dev/icons?i=docker,kubernetes,jenkins,gitlab,firebase&theme=dark" alt="Docker, Kubernetes, Jenkins, GitLab CI, Firebase">
+  <img src="https://skillicons.dev/icons?i=java,spring,postgres,mongodb,kafka,docker,kubernetes&theme=dark" alt="Java, Spring, PostgreSQL, MongoDB, Kafka, Docker, Kubernetes">
 </p>
 
-Also: Quarkus · Ktor · gRPC · MQTT · BullMQ · Socket.IO · TimescaleDB · Helm · SonarQube · PAX POSLink · Clover SDK · Google ML Kit
+Also on the backend: Quarkus · VerneMQ · ActiveMQ · microservices · gRPC · MQTT · Redis · TimescaleDB · Helm · Jenkins · GitLab CI · Ktor · NestJS
+
+<p>
+  <b>Mobile</b><br>
+  <img src="https://skillicons.dev/icons?i=androidstudio,kotlin,swift,flutter,dart,react&theme=dark" alt="Android, Kotlin, Swift, Flutter, Dart, React Native">
+</p>
+
+Android (Kotlin/Java) · iOS (Swift/SwiftUI) · Flutter · React Native · Crashlytics · PAX POSLink · Clover SDK · Google ML Kit
+
+<p>
+  <b>Web</b><br>
+  <img src="https://skillicons.dev/icons?i=react,tailwind,ts,js,vue&theme=dark" alt="React, Tailwind CSS, TypeScript, JavaScript, Vue">
+</p>
 
 ## GitHub activity
 
@@ -89,7 +89,7 @@ Top languages: Java 32%, JavaScript 27%, TypeScript 21%, Dart 19%, CSS 1%
 | Project | What it is | Stack |
 |---|---|---|
 | [**technical-teams**](https://github.com/Tuan-Quyen/technical-teams) | Claude Code plugin that runs a virtual software team: a tech-lead agent routes each request through 12 specialist agents and 7 delivery pipelines, with resumable state | JavaScript · AI agents |
-| [**GiaoLuuTiengAnh**](https://github.com/Tuan-Quyen/GiaoLuuTiengAnh) | Multiplayer 3D study room for TOEIC: shared desks, proximity voice chat, timed exams and leaderboards | TypeScript · Three.js · Socket.IO |
+| [**GiaoLuuTiengAnh**](https://github.com/Tuan-Quyen/GiaoLuuTiengAnh) | Multiplayer 3D study room for learning English: shared desks, proximity voice chat, timed exams and leaderboards | TypeScript · Three.js · Socket.IO |
 | [**qcsocial**](https://github.com/Tuan-Quyen/qcsocial) | Real-time chat rooms over WebSocket with a reactive Quarkus backend on MongoDB and a bilingual Flutter client | Java · Quarkus · Flutter |
 
 ## Career at a glance
