@@ -70,6 +70,9 @@ Also: Quarkus · Ktor · gRPC · MQTT · BullMQ · Socket.IO · TimescaleDB · H
   <img src="./stats.svg" alt="GitHub activity: public projects, commits this year and top languages, updated daily" width="100%">
 </p>
 
+<!-- STATS:START -->
+<!-- STATS:END -->
+
 ## Featured projects
 
 | Project | What it is | Stack |

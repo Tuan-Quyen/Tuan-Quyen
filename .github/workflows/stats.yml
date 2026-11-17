@@ -32,11 +32,11 @@ jobs:
         run: node .github/scripts/stats.mjs stats.svg
       - name: Commit if changed
         run: |
-          if git diff --quiet -- stats.svg && git ls-files --error-unmatch stats.svg >/dev/null 2>&1; then
+          if git diff --quiet -- stats.svg README.md && git ls-files --error-unmatch stats.svg >/dev/null 2>&1; then
             echo "No changes"; exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add stats.svg
+          git add stats.svg README.md
           git commit -m "chore: update profile stats"
           git push

@@ -1,6 +1,6 @@
 // Builds stats.svg for the profile README from the public GitHub REST API.
 // Runs in GitHub Actions (GITHUB_TOKEN) or locally (unauthenticated, 60 req/h).
-import { writeFileSync } from "node:fs";
+import { writeFileSync, readFileSync, existsSync } from "node:fs";
 
 const USER = process.env.GH_USER || "Tuan-Quyen";
 const OUT = process.argv[2] || "stats.svg";
@@ -95,4 +95,22 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="290" v
 </svg>
 `;
 writeFileSync(OUT, svg);
+
+// Plain-text copy of the same numbers inside README.md, so ATS / AI tools that ignore images can read them.
+const README = process.env.README_PATH || "README.md";
+if (existsSync(README)) {
+  const langs = top.map(l => `${l.name} ${(l.pct * 100).toFixed(0)}%`).join(", ");
+  const block = [
+    "<!-- STATS:START (generated daily by .github/scripts/stats.mjs, do not edit) -->",
+    "| Public repositories | Public commits in " + year + " | On GitHub since | Top languages (public repos) |",
+    "|---|---|---|---|",
+    `| ${own.length} | ${commitsThisYear} | ${since} | ${langs} |`,
+    "",
+    `<sub>Updated ${today}. Most of my professional work lives in private client repositories and is not counted here.</sub>`,
+    "<!-- STATS:END -->",
+  ].join("\n");
+  const md = readFileSync(README, "utf8");
+  const re = /<!-- STATS:START[\s\S]*?<!-- STATS:END -->/;
+  if (re.test(md)) writeFileSync(README, md.replace(re, block));
+}
 console.log({ projects: own.length, commitsThisYear, since, top });
