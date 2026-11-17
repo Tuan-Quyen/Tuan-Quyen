@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://quyenchau.pages.dev"><img src="./banner.svg" alt="Quyen Chau · Full-Stack Developer · I build software that moves money, maps, messages and events" width="100%"></a>
+  <a href="https://quyenchau.pages.dev"><img src="./banner.svg" alt="Quyen Chau · Full-Stack Engineer · I build software that moves money, maps, messages and events" width="100%"></a>
 </p>
 
 <p align="center">
@@ -10,7 +10,7 @@
 
 ## About
 
-Full-stack developer in **Ho Chi Minh City** with **7+ years** across Java and Kotlin backends, native and Flutter mobile, and NestJS microservices. I've shipped POS hardware integrations, PCI-scoped payment services, real-time tracking and event-driven pipelines.
+Full-stack engineer in **Ho Chi Minh City** with **7+ years** across Java and Kotlin backends, native and Flutter mobile, and NestJS microservices. I've shipped POS hardware integrations, PCI-scoped payment services, real-time tracking and event-driven pipelines.
 
 I like owning a codebase end to end: architecture, releases, crash triage and code review.
 
@@ -88,5 +88,5 @@ Also: Quarkus · Ktor · gRPC · MQTT · BullMQ · Socket.IO · TimescaleDB · H
 2022  ●  Asset tracking platform, team lead of 4 (Spring, Kafka, React Native)
 2021  ●  Wi-Fi QoE analytics (Quarkus microservices, TimescaleDB)
 2020  ●  Smart home IoT control (Kotlin, MQTT, Quarkus)
-2019  ○  Started as a mobile developer
+2019  ○  Started as a mobile engineer
 ```
