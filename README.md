@@ -70,7 +70,12 @@ Also: Quarkus · Ktor · gRPC · MQTT · BullMQ · Socket.IO · TimescaleDB · H
   <img src="./stats.svg" alt="GitHub activity: public projects, commits this year and top languages, updated daily" width="100%">
 </p>
 
-<!-- STATS:START -->
+<!-- STATS:START (generated daily by .github/scripts/stats.mjs, do not edit) -->
+| Public repositories | Public commits in 2026 | On GitHub since | Top languages (public repos) |
+|---|---|---|---|
+| 10 | 38 | 2019 | Java 35%, JavaScript 25%, Dart 21%, TypeScript 18%, CSS 1% |
+
+<sub>Updated 2026-11-17. Most of my professional work lives in private client repositories and is not counted here.</sub>
 <!-- STATS:END -->
 
 ## Featured projects
