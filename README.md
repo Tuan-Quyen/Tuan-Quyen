@@ -64,6 +64,12 @@ I like owning a codebase end to end: architecture, releases, crash triage and co
 
 Also: Quarkus · Ktor · gRPC · MQTT · BullMQ · Socket.IO · TimescaleDB · Helm · SonarQube · PAX POSLink · Clover SDK · Google ML Kit
 
+## 📊 GitHub activity
+
+<p align="center">
+  <img src="./stats.svg" alt="GitHub activity: public projects, commits this year and top languages, updated daily" width="100%">
+</p>
+
 ## 🚀 Featured projects
 
 | | Project | What it is | Stack |
