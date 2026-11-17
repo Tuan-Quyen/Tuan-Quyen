@@ -95,4 +95,4 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="290" v
 </svg>
 `;
 writeFileSync(OUT, svg);
-console.log({ projects: own.length, active, commitsThisYear, stars, top });
+console.log({ projects: own.length, commitsThisYear, since, top });
