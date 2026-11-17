@@ -1,12 +1,12 @@
 // Updates the GitHub activity table in README.md (plain text, readable by ATS / AI tools)
-// and the small languages bar (langs.svg), using the public GitHub REST API.
+// and the designed activity card (activity.svg), using the public GitHub REST API.
 // Runs in GitHub Actions (GITHUB_TOKEN) or locally (unauthenticated, 60 req/h).
 // Writes only when a number changes, so the hourly schedule does not create empty commits.
 import { writeFileSync, readFileSync, existsSync } from "node:fs";
 
 const USER = process.env.GH_USER || "Tuan-Quyen";
 const README = process.env.README_PATH || "README.md";
-const LANGS_SVG = process.argv[2] || "langs.svg";
+const LANGS_SVG = process.argv[2] || "activity.svg";
 const headers = { Accept: "application/vnd.github+json", "User-Agent": "profile-stats" };
 if (process.env.GITHUB_TOKEN) headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
 
@@ -46,44 +46,93 @@ const COLORS = ["#19C3A6", "#FFB547", "#9AA8FF", "#F2789F", "#5E74B8"];
 const fmt = n => (n == null ? "n/a" : n.toLocaleString("en-US"));
 const pct = l => `${Math.round(l.pct * 100)}%`;
 
-// ---- languages bar + legend (image; the same data is in its alt text) ----
-let x = 0, lx = 0;
-const W = 880;
-const bar = top.map((l, i) => {
-  const w = Math.max(6, l.pct * W);
-  const r = `<rect x="${x.toFixed(1)}" y="0" width="${(w - 4).toFixed(1)}" height="10" rx="5" fill="${COLORS[i]}"/>`;
-  x += w;
-  return r;
-}).join("");
-const legend = top.map((l, i) => {
-  const label = `${l.name} ${pct(l)}`;
-  const g = `<circle cx="${lx + 5}" cy="33" r="5" fill="${COLORS[i]}"/><text x="${lx + 15}" y="38">${label}</text>`;
-  lx += 34 + label.length * 8;
-  return g;
-}).join("");
-const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="46" viewBox="0 0 ${W} 46" role="img" aria-label="Top languages: ${top.map(l => `${l.name} ${pct(l)}`).join(", ")}"><g font-family="Segoe UI, -apple-system, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#8B949E">${bar}${legend}</g></svg>\n`;
-
-// ---- README table ----
-const body = [
-  `<table>`,
-  `  <tr>`,
-  `    <td align="center" width="25%"><h3>${fmt(own.length)}</h3><sub>Public repositories</sub></td>`,
-  `    <td align="center" width="25%"><h3>${fmt(totalCommits)}</h3><sub>Public commits, all time</sub></td>`,
-  `    <td align="center" width="25%"><h3>${fmt(yearCommits)}</h3><sub>Public commits in ${year}</sub></td>`,
-  `    <td align="center" width="25%"><h3>${since}</h3><sub>On GitHub since</sub></td>`,
-  `  </tr>`,
-  `  <tr>`,
-  `    <td colspan="4">`,
-  `      <b>Top languages</b> <sub>(share of code across public repositories)</sub><br><br>`,
-  `      <img src="./${LANGS_SVG}" width="100%" alt="Top languages: ${top.map(l => `${l.name} ${pct(l)}`).join(", ")}">`,
-  `    </td>`,
-  `  </tr>`,
-  `</table>`,
-].join("\n");
-
+// ---- activity card (SVG) ----
 const now = new Date(Date.now() + 7 * 3600e3).toISOString().slice(0, 16).replace("T", " ");
 const lastPushVN = lastPush ? new Date(new Date(lastPush).getTime() + 7 * 3600e3).toISOString().slice(0, 10) : "n/a";
-const footer = `<sub>Live counters from the GitHub API, refreshed hourly. Last updated ${now} (UTC+7), latest push ${lastPushVN}. Most of my professional work lives in private client repositories and is not counted here.</sub>`;
+const esc = t => String(t).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const tiles = [
+  [fmt(own.length), "Public repositories", COLORS[0]],
+  [fmt(totalCommits), "Public commits, all time", COLORS[1]],
+  [fmt(yearCommits), `Public commits in ${year}`, COLORS[2]],
+  [String(since), "On GitHub since", COLORS[3]],
+];
+const CW = 1200, PAD = 48, GAP = 16;
+const TW = (CW - PAD * 2 - GAP * 3) / 4;
+const tileSvg = tiles.map(([n, label, c], i) => {
+  const tx = PAD + i * (TW + GAP);
+  return `<g class="up" style="animation-delay:${i * 110}ms">
+    <rect x="${tx}" y="92" width="${TW}" height="124" rx="16" fill="#13224A" stroke="#22366A"/>
+    <rect x="${tx + 22}" y="112" width="28" height="4" rx="2" fill="${c}"/>
+    <text x="${tx + 22}" y="172" class="n">${esc(n)}</text>
+    <text x="${tx + 22}" y="198" class="l">${esc(label)}</text>
+  </g>`;
+}).join("");
+const BW = CW - PAD * 2;
+let bx = PAD;
+const bar = top.map((l, i) => {
+  const w = Math.max(6, l.pct * BW);
+  const r = `<rect x="${bx.toFixed(1)}" y="262" width="${(w - 4).toFixed(1)}" height="10" rx="5" fill="${COLORS[i]}"/>`;
+  bx += w;
+  return r;
+}).join("");
+let lx = PAD;
+const legend = top.map((l, i) => {
+  const label = `${l.name}`;
+  const g = `<circle cx="${lx + 5}" cy="298" r="5" fill="${COLORS[i]}"/><text x="${lx + 17}" y="303" class="lg">${esc(label)} <tspan class="lp">${pct(l)}</tspan></text>`;
+  lx += 44 + (label.length + 4) * 8.4;
+  return g;
+}).join("");
+const card = `<svg xmlns="http://www.w3.org/2000/svg" width="${CW}" height="360" viewBox="0 0 ${CW} 360" role="img" aria-label="GitHub activity: ${own.length} public repositories, ${totalCommits} public commits all time, ${yearCommits} in ${year}, on GitHub since ${since}. Top languages: ${top.map(l => `${l.name} ${pct(l)}`).join(", ")}.">
+  <defs>
+    <pattern id="d" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#9AA8FF" fill-opacity=".16"/></pattern>
+    <radialGradient id="g" cx="90%" cy="0%" r="60%"><stop offset="0" stop-color="#19C3A6" stop-opacity=".18"/><stop offset="1" stop-color="#19C3A6" stop-opacity="0"/></radialGradient>
+    <style>
+      text { font-family: "Segoe UI", -apple-system, "Helvetica Neue", Arial, sans-serif; }
+      .m { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace; }
+      .h { font-size: 22px; font-weight: 700; fill: #FFFFFF; }
+      .n { font-size: 46px; font-weight: 800; fill: #FFFFFF; letter-spacing: -1px; }
+      .l { font-size: 15px; fill: #A9B4CC; }
+      .s { font-size: 13px; fill: #A9B4CC; }
+      .lg { font-size: 14px; fill: #C9D2E6; }
+      .lp { fill: #8D9AB8; }
+      .up { opacity: 0; animation: up .6s cubic-bezier(.2,.8,.2,1) forwards; }
+      .live { animation: pulse 2s ease-out infinite; transform-origin: 1026px 52px; }
+      @keyframes up { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+      @keyframes pulse { 0% { opacity: .7; transform: scale(1); } 100% { opacity: 0; transform: scale(2.6); } }
+      @media (prefers-reduced-motion: reduce) { .up { animation: none; opacity: 1; } .live { animation: none; opacity: 0; } }
+    </style>
+  </defs>
+  <rect width="${CW}" height="360" rx="22" fill="#0B1630"/>
+  <rect width="${CW}" height="360" rx="22" fill="url(#d)"/>
+  <rect width="${CW}" height="360" rx="22" fill="url(#g)"/>
+  <text x="${PAD}" y="60" class="h">GitHub activity</text>
+  <rect x="1006" y="38" width="146" height="28" rx="14" fill="#13224A" stroke="#22366A"/>
+  <circle class="live" cx="1026" cy="52" r="5" fill="#19C3A6"/><circle cx="1026" cy="52" r="5" fill="#19C3A6"/>
+  <text x="1040" y="57" class="m" font-size="13" fill="#19C3A6">LIVE · hourly</text>
+  ${tileSvg}
+  <text x="${PAD}" y="248" class="s">Top languages across public repositories</text>
+  ${bar}
+  ${legend}
+  <text x="${PAD}" y="338" class="m" font-size="12" fill="#6E7FA6">updated ${now} UTC+7 · last push ${lastPushVN}</text>
+  <text x="${CW - PAD}" y="338" class="m" font-size="12" fill="#6E7FA6" text-anchor="end">public repositories only</text>
+</svg>
+`;
+
+// ---- README block: card + text copy of the numbers for ATS / AI tools ----
+const body = [
+  `<img src="./${LANGS_SVG}" width="100%" alt="GitHub activity: ${own.length} public repositories, ${totalCommits} public commits all time, ${yearCommits} public commits in ${year}, on GitHub since ${since}. Top languages: ${top.map(l => `${l.name} ${pct(l)}`).join(", ")}.">`,
+  ``,
+  `<details>`,
+  `<summary>Activity data as text</summary>`,
+  ``,
+  `| Public repositories | Public commits, all time | Public commits in ${year} | On GitHub since | Top languages |`,
+  `|---|---|---|---|---|`,
+  `| ${fmt(own.length)} | ${fmt(totalCommits)} | ${fmt(yearCommits)} | ${since} | ${top.map(l => `${l.name} ${pct(l)}`).join(", ")} |`,
+  ``,
+  `</details>`,
+].join("\n");
+const svg = card;
+const footer = `<sub>Counters come from the GitHub API and refresh hourly. Most of my professional work lives in private client repositories and is not counted here.</sub>`;
 
 const START = "<!-- STATS:START (generated by .github/scripts/stats.mjs, do not edit) -->";
 const END = "<!-- STATS:END -->";
@@ -93,7 +142,8 @@ if (!existsSync(README)) throw new Error(`${README} not found`);
 const md = readFileSync(README, "utf8");
 if (!re.test(md)) throw new Error("STATS markers not found in README");
 const current = md.match(re)[0];
-const changed = !current.includes(body) || !existsSync(LANGS_SVG) || readFileSync(LANGS_SVG, "utf8") !== svg;
+const strip = t => t.replace(/updated [0-9-]+ [0-9:]+ UTC\+7/g, "");
+const changed = !current.includes(body) || !existsSync(LANGS_SVG) || strip(readFileSync(LANGS_SVG, "utf8")) !== strip(svg);
 
 if (changed) {
   writeFileSync(README, md.replace(re, `${START}\n${body}\n\n${footer}\n${END}`));
