@@ -8,42 +8,42 @@
   <a href="mailto:ctuanquyen97@gmail.com"><img src="https://img.shields.io/badge/Contact_me-0B1630?style=for-the-badge&logo=gmail&logoColor=white" alt="Contact me"></a>
 </p>
 
-## 👋 About me
+## About
 
 Full-stack developer in **Ho Chi Minh City** with **7+ years** across Java and Kotlin backends, native and Flutter mobile, and NestJS microservices. I've shipped POS hardware integrations, PCI-scoped payment services, real-time tracking and event-driven pipelines.
 
 I like owning a codebase end to end: architecture, releases, crash triage and code review.
 
-- 🟢 **Open to** full-stack roles, especially ones that cross backend and mobile
-- 🔨 **Now building** a POS terminal app, an on-device card tokenization service and a real-time tour booking platform
-- 🤖 **After hours** I build AI agent tooling for Claude Code
+- **Open to:** full-stack roles, especially ones that cross backend and mobile
+- **Now building:** a POS terminal app, an on-device card tokenization service and a real-time tour booking platform
+- **After hours:** I build AI agent tooling for Claude Code
 
-## 🧭 What I build
+## What I build
 
 <table>
   <tr>
     <td width="50%" valign="top">
-      <h3>💳 Payments and POS</h3>
+      <h3>Payments and POS</h3>
       Android/iOS POS apps across PAX, Clover and BLE card readers. An embedded Ktor service that hands third-party POS software card <b>tokens</b> instead of raw card data. Stripe and VNPay with webhooks.
     </td>
     <td width="50%" valign="top">
-      <h3>📍 Real-time and maps</h3>
+      <h3>Real-time and maps</h3>
       Live tour tracking and turn-by-turn navigation that recover from GPS and network loss. Horizontally scalable location service on Socket.IO with the Redis adapter.
     </td>
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <h3>⚡ Event-driven backends</h3>
+      <h3>Event-driven backends</h3>
       Java Spring and Quarkus services on Kafka, gRPC and MQTT for multi-tenant network platforms with thousands of devices. High-load time series on TimescaleDB.
     </td>
     <td width="50%" valign="top">
-      <h3>📱 Mobile apps</h3>
+      <h3>Mobile apps</h3>
       Native Kotlin and Swift, Flutter with BLoC and Clean Architecture, React Native. Published to Google Play and the App Store, kept stable through Crashlytics.
     </td>
   </tr>
 </table>
 
-## 🛠️ Tech stack
+## Tech stack
 
 <p>
   <b>Backend</b><br>
@@ -64,21 +64,21 @@ I like owning a codebase end to end: architecture, releases, crash triage and co
 
 Also: Quarkus · Ktor · gRPC · MQTT · BullMQ · Socket.IO · TimescaleDB · Helm · SonarQube · PAX POSLink · Clover SDK · Google ML Kit
 
-## 📊 GitHub activity
+## GitHub activity
 
 <p align="center">
   <img src="./stats.svg" alt="GitHub activity: public projects, commits this year and top languages, updated daily" width="100%">
 </p>
 
-## 🚀 Featured projects
+## Featured projects
 
-| | Project | What it is | Stack |
-|---|---|---|---|
-| 🤖 | [**technical-teams**](https://github.com/Tuan-Quyen/technical-teams) | Claude Code plugin that runs a virtual software team: a tech-lead agent routes each request through 12 specialist agents and 7 delivery pipelines, with resumable state | JavaScript · AI agents |
-| 🧊 | [**GiaoLuuTiengAnh**](https://github.com/Tuan-Quyen/GiaoLuuTiengAnh) | Multiplayer 3D study room for TOEIC: shared desks, proximity voice chat, timed exams and leaderboards | TypeScript · Three.js · Socket.IO |
-| 💬 | [**qcsocial**](https://github.com/Tuan-Quyen/qcsocial) | Real-time chat rooms over WebSocket with a reactive Quarkus backend on MongoDB and a bilingual Flutter client | Java · Quarkus · Flutter |
+| Project | What it is | Stack |
+|---|---|---|
+| [**technical-teams**](https://github.com/Tuan-Quyen/technical-teams) | Claude Code plugin that runs a virtual software team: a tech-lead agent routes each request through 12 specialist agents and 7 delivery pipelines, with resumable state | JavaScript · AI agents |
+| [**GiaoLuuTiengAnh**](https://github.com/Tuan-Quyen/GiaoLuuTiengAnh) | Multiplayer 3D study room for TOEIC: shared desks, proximity voice chat, timed exams and leaderboards | TypeScript · Three.js · Socket.IO |
+| [**qcsocial**](https://github.com/Tuan-Quyen/qcsocial) | Real-time chat rooms over WebSocket with a reactive Quarkus backend on MongoDB and a bilingual Flutter client | Java · Quarkus · Flutter |
 
-## 📈 Career at a glance
+## Career at a glance
 
 ```text
 2026  ●  Tour booking platform · card tokenization bridge · benefits member app
@@ -90,7 +90,3 @@ Also: Quarkus · Ktor · gRPC · MQTT · BullMQ · Socket.IO · TimescaleDB · H
 2020  ●  Smart home IoT control (Kotlin, MQTT, Quarkus)
 2019  ○  Started as a mobile developer
 ```
-
-<p align="center">
-  <a href="https://quyenchau.pages.dev"><b>See the full story and download my CV →</b></a>
-</p>
