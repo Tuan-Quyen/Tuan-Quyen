@@ -1,0 +1,90 @@
+<p align="center">
+  <a href="https://quyenchau.pages.dev"><img src="./banner.svg" alt="Quyen Chau · Full-Stack Developer · I build software that moves money, maps, messages and events" width="100%"></a>
+</p>
+
+<p align="center">
+  <a href="https://quyenchau.pages.dev"><img src="https://img.shields.io/badge/Portfolio_&_CV-quyenchau.pages.dev-19C3A6?style=for-the-badge&labelColor=0B1630" alt="Portfolio and CV"></a>
+  <a href="https://www.linkedin.com/in/quy%E1%BB%81n-ch%C3%A2u-7b1331246/"><img src="https://img.shields.io/badge/LinkedIn-Connect-FFB547?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=0B1630" alt="LinkedIn"></a>
+  <a href="mailto:ctuanquyen97@gmail.com"><img src="https://img.shields.io/badge/Email-ctuanquyen97@gmail.com-9AA8FF?style=for-the-badge&logo=gmail&logoColor=white&labelColor=0B1630" alt="Email"></a>
+</p>
+
+## 👋 About me
+
+Full-stack developer in **Ho Chi Minh City** with **7+ years** across Java and Kotlin backends, native and Flutter mobile, and NestJS microservices. I've shipped POS hardware integrations, PCI-scoped payment services, real-time tracking and event-driven pipelines for clients in the **USA, Australia and Vietnam**.
+
+I like owning a codebase end to end: architecture, releases, crash triage and code review.
+
+- 🟢 **Open to** full-stack roles, especially ones that cross backend and mobile
+- 🔨 **Now building** a POS terminal app, an on-device card tokenization service and a real-time tour booking platform
+- 🤖 **After hours** I build AI agent tooling for Claude Code
+
+## 🧭 What I build
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>💳 Payments and POS</h3>
+      Android/iOS POS apps across PAX, Clover and BLE card readers. An embedded Ktor service that hands third-party POS software card <b>tokens</b> instead of raw card data. Stripe and VNPay with webhooks.
+    </td>
+    <td width="50%" valign="top">
+      <h3>📍 Real-time and maps</h3>
+      Live tour tracking and turn-by-turn navigation that recover from GPS and network loss. Horizontally scalable location service on Socket.IO with the Redis adapter.
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>⚡ Event-driven backends</h3>
+      Java Spring and Quarkus services on Kafka, gRPC and MQTT for multi-tenant network platforms with thousands of devices. High-load time series on TimescaleDB.
+    </td>
+    <td width="50%" valign="top">
+      <h3>📱 Mobile apps</h3>
+      Native Kotlin and Swift, Flutter with BLoC and Clean Architecture, React Native. Published to Google Play and the App Store, kept stable through Crashlytics.
+    </td>
+  </tr>
+</table>
+
+## 🛠️ Tech stack
+
+<p>
+  <b>Backend</b><br>
+  <img src="https://skillicons.dev/icons?i=java,kotlin,spring,nodejs,nestjs,kafka&theme=dark" alt="Java, Kotlin, Spring, Node.js, NestJS, Kafka">
+</p>
+<p>
+  <b>Mobile</b><br>
+  <img src="https://skillicons.dev/icons?i=androidstudio,swift,flutter,dart,react&theme=dark" alt="Android, Swift, Flutter, Dart, React Native">
+</p>
+<p>
+  <b>Web and data</b><br>
+  <img src="https://skillicons.dev/icons?i=ts,react,vue,mongodb,postgres,mysql,redis&theme=dark" alt="TypeScript, React, Vue, MongoDB, PostgreSQL, MySQL, Redis">
+</p>
+<p>
+  <b>DevOps</b><br>
+  <img src="https://skillicons.dev/icons?i=docker,kubernetes,jenkins,gitlab,firebase&theme=dark" alt="Docker, Kubernetes, Jenkins, GitLab CI, Firebase">
+</p>
+
+Also: Quarkus · Ktor · gRPC · MQTT · BullMQ · Socket.IO · TimescaleDB · Helm · SonarQube · PAX POSLink · Clover SDK · Google ML Kit
+
+## 🚀 Featured projects
+
+| | Project | What it is | Stack |
+|---|---|---|---|
+| 🤖 | [**technical-teams**](https://github.com/Tuan-Quyen/technical-teams) | Claude Code plugin that runs a virtual software team: a tech-lead agent routes each request through 12 specialist agents and 7 delivery pipelines, with resumable state | JavaScript · AI agents |
+| 🧊 | [**GiaoLuuTiengAnh**](https://github.com/Tuan-Quyen/GiaoLuuTiengAnh) | Multiplayer 3D study room for TOEIC: shared desks, proximity voice chat, timed exams and leaderboards | TypeScript · Three.js · Socket.IO |
+| 💬 | [**qcsocial**](https://github.com/Tuan-Quyen/qcsocial) | Real-time chat rooms over WebSocket with a reactive Quarkus backend on MongoDB and a bilingual Flutter client | Java · Quarkus · Flutter |
+
+## 📈 Career at a glance
+
+```text
+2026  ●  Tour booking platform · card tokenization bridge · benefits member app
+2025  ●  Healthcare benefits POS terminal (Android + iOS, PAX / Clover / BLE)
+2024  ●  Driving lesson marketplace (Kotlin, Swift, Flutter, NestJS microservices)
+2023  ●  Cloud network management platform (Spring, gRPC, Kafka, Android)
+2022  ●  Asset tracking platform, team lead of 4 (Spring, Kafka, React Native)
+2021  ●  Wi-Fi QoE analytics (Quarkus microservices, TimescaleDB)
+2020  ●  Smart home IoT control (Kotlin, MQTT, Quarkus)
+2019  ○  Started as a mobile developer
+```
+
+<p align="center">
+  <a href="https://quyenchau.pages.dev"><b>See the full story and download my CV →</b></a>
+</p>

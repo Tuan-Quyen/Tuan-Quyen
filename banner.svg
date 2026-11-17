@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320" role="img" aria-label="Quyen Chau, Full-Stack Developer. I build software that moves money, maps, messages and events.">
+  <defs>
+    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#9AA8FF" fill-opacity=".22"/></pattern>
+    <radialGradient id="glow" cx="78%" cy="45%" r="45%"><stop offset="0" stop-color="#19C3A6" stop-opacity=".30"/><stop offset="1" stop-color="#19C3A6" stop-opacity="0"/></radialGradient>
+    <linearGradient id="grad" x1="0" x2="1"><stop offset="0" stop-color="#19C3A6"/><stop offset="1" stop-color="#FFB547"/></linearGradient>
+    <linearGradient id="dev" x1="0" y1="0" x2=".4" y2="1"><stop offset="0" stop-color="#EEF1F6"/><stop offset="1" stop-color="#C8CFDB"/></linearGradient>
+    <clipPath id="screen"><rect x="862" y="104" width="248" height="140"/></clipPath>
+    <clipPath id="frame"><rect width="1200" height="320" rx="22"/></clipPath>
+    <style>
+      .f { font-family: "Segoe UI", -apple-system, "Helvetica Neue", Arial, sans-serif; }
+      .m { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace; }
+      .w { opacity: 0; animation: cycle 12s infinite; }
+      .w1 { animation-delay: 0s; } .w2 { animation-delay: 3s; } .w3 { animation-delay: 6s; } .w4 { animation-delay: 9s; }
+      @keyframes cycle { 0% { opacity: 0; transform: translateY(14px); } 3%, 22% { opacity: 1; transform: none; } 25%, 100% { opacity: 0; transform: translateY(-10px); } }
+      .feed { animation: scroll 9s linear infinite; }
+      @keyframes scroll { from { transform: translateY(0); } to { transform: translateY(-240px); } }
+      .ping { animation: ping 2s ease-out infinite; transform-origin: 74px 54px; }
+      @keyframes ping { 0% { opacity: .7; transform: scale(1); } 100% { opacity: 0; transform: scale(3); } }
+      @media (prefers-reduced-motion: reduce) { .w, .feed, .ping { animation: none; } .w1 { opacity: 1; } }
+    </style>
+  </defs>
+  <g clip-path="url(#frame)">
+    <rect width="1200" height="320" fill="#0B1630"/>
+    <rect width="1200" height="320" fill="url(#dots)"/>
+    <rect width="1200" height="320" fill="url(#glow)"/>
+
+    <circle class="ping" cx="74" cy="54" r="5" fill="#19C3A6"/>
+    <circle cx="74" cy="54" r="5" fill="#19C3A6"/>
+    <text x="90" y="59" class="m" font-size="15" fill="#19C3A6">Xin chào, I'm Quyen Chau · Full-Stack Developer</text>
+
+    <text x="64" y="138" class="f" font-size="62" font-weight="800" fill="#FFFFFF" letter-spacing="-2">I build software</text>
+    <text x="64" y="208" class="f" font-size="62" font-weight="800" fill="#FFFFFF" letter-spacing="-2">that moves</text>
+    <g class="f" font-size="62" font-weight="800" letter-spacing="-2" fill="url(#grad)">
+      <text x="400" y="208" class="w w1">money.</text>
+      <text x="400" y="208" class="w w2">maps.</text>
+      <text x="400" y="208" class="w w3">messages.</text>
+      <text x="400" y="208" class="w w4">events.</text>
+    </g>
+    <text x="64" y="262" class="f" font-size="18" fill="#A9B4CC">Java · Kotlin · Swift · Flutter · NestJS  —  7+ years, clients in the USA, Australia and Vietnam</text>
+
+    <!-- terminal -->
+    <rect x="846" y="44" width="280" height="300" rx="28" fill="url(#dev)"/>
+    <rect x="862" y="72" width="248" height="176" rx="14" fill="#07101F"/>
+    <text x="876" y="94" class="m" font-size="10.5" fill="#6E7FA6">QC-TERMINAL 7.0</text>
+    <text x="1096" y="94" class="m" font-size="10.5" fill="#19C3A6" text-anchor="end">LIVE</text>
+    <g clip-path="url(#screen)">
+      <g class="feed m" font-size="11">
+        <g transform="translate(876,0)">
+          <text y="122" fill="#19C3A6">pos.card.swiped</text><text y="138" fill="#C9D2E6">$24.90 · benefits card · PAX</text>
+          <text y="170" fill="#FFB547">tour.gps.update</text><text y="186" fill="#C9D2E6">10.7769, 106.7009 · guide #12</text>
+          <text y="218" fill="#9AA8FF">kafka.qoe.sample</text><text y="234" fill="#C9D2E6">ap-23 · rssi -61 dBm · ok</text>
+          <text y="266" fill="#19C3A6">token.issued</text><text y="282" fill="#C9D2E6">tok_7f3a…e91 · PCI scope ↓</text>
+          <text y="314" fill="#FFB547">booking.state</text><text y="330" fill="#C9D2E6">CONFIRMED → IN_PROGRESS</text>
+          <!-- repeat for seamless loop (offset 240) -->
+          <text y="362" fill="#19C3A6">pos.card.swiped</text><text y="378" fill="#C9D2E6">$24.90 · benefits card · PAX</text>
+          <text y="410" fill="#FFB547">tour.gps.update</text><text y="426" fill="#C9D2E6">10.7769, 106.7009 · guide #12</text>
+          <text y="458" fill="#9AA8FF">kafka.qoe.sample</text><text y="474" fill="#C9D2E6">ap-23 · rssi -61 dBm · ok</text>
+        </g>
+      </g>
+    </g>
+    <g>
+      <rect x="868" y="262" width="54" height="22" rx="7" fill="#F7F8FB"/>
+      <rect x="930" y="262" width="54" height="22" rx="7" fill="#F7F8FB"/>
+      <rect x="992" y="262" width="54" height="22" rx="7" fill="#F7F8FB"/>
+      <rect x="1054" y="262" width="54" height="22" rx="7" fill="#19C3A6"/>
+    </g>
+  </g>
+</svg>
