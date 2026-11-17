@@ -96,7 +96,7 @@ const card = `<svg xmlns="http://www.w3.org/2000/svg" width="${CW}" height="360"
       .lg { font-size: 14px; fill: #C9D2E6; }
       .lp { fill: #8D9AB8; }
       .up { opacity: 0; animation: up .6s cubic-bezier(.2,.8,.2,1) forwards; }
-      .live { animation: pulse 2s ease-out infinite; transform-origin: 1026px 52px; }
+      .live { animation: pulse 2s ease-out infinite; transform-origin: ${PAD + 20}px 52px; }
       @keyframes up { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
       @keyframes pulse { 0% { opacity: .7; transform: scale(1); } 100% { opacity: 0; transform: scale(2.6); } }
       @media (prefers-reduced-motion: reduce) { .up { animation: none; opacity: 1; } .live { animation: none; opacity: 0; } }
@@ -105,16 +105,15 @@ const card = `<svg xmlns="http://www.w3.org/2000/svg" width="${CW}" height="360"
   <rect width="${CW}" height="360" rx="22" fill="#0B1630"/>
   <rect width="${CW}" height="360" rx="22" fill="url(#d)"/>
   <rect width="${CW}" height="360" rx="22" fill="url(#g)"/>
-  <text x="${PAD}" y="60" class="h">GitHub activity</text>
-  <rect x="1006" y="38" width="146" height="28" rx="14" fill="#13224A" stroke="#22366A"/>
-  <circle class="live" cx="1026" cy="52" r="5" fill="#19C3A6"/><circle cx="1026" cy="52" r="5" fill="#19C3A6"/>
-  <text x="1040" y="57" class="m" font-size="13" fill="#19C3A6">LIVE · hourly</text>
+  <rect x="${PAD}" y="38" width="146" height="28" rx="14" fill="#13224A" stroke="#22366A"/>
+  <circle class="live" cx="${PAD + 20}" cy="52" r="5" fill="#19C3A6"/><circle cx="${PAD + 20}" cy="52" r="5" fill="#19C3A6"/>
+  <text x="${PAD + 34}" y="57" class="m" font-size="13" fill="#19C3A6">LIVE · hourly</text>
   ${tileSvg}
   <text x="${PAD}" y="248" class="s">Top languages across public repositories</text>
   ${bar}
   ${legend}
   <text x="${PAD}" y="338" class="m" font-size="12" fill="#6E7FA6">updated ${now} UTC+7 · last push ${lastPushVN}</text>
-  <text x="${CW - PAD}" y="338" class="m" font-size="12" fill="#6E7FA6" text-anchor="end">public repositories only</text>
+  <text x="${CW - PAD}" y="57" class="m" font-size="12" fill="#6E7FA6" text-anchor="end">public repositories only</text>
 </svg>
 `;
 
